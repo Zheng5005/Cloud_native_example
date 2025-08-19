@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package calculator;
+option go_package = "example.com/cloud-native-grpc-calculator/gen/calculator;calculatorpb";
+
+service Calculator {
+  rpc Add (AddRequest) returns (AddResponse);
+  rpc Sub (SubRequest) returns (SubResponse);
+  rpc Mul (MulRequest) returns (MulResponse);
+  rpc Div (DivRequest) returns (DivResponse);
+}
+
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+message AddResponse {
+  int32 result = 1;
+}
+
+message SubRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+message SubResponse {
+  int32 result = 1;
+}
+
+message MulRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+message MulResponse {
+  int32 result = 1;
+}
+
+message DivRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+message DivResponse {
+  int32 result = 1;
+}

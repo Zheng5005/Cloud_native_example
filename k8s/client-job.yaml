@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: grpc-client
+  namespace: calc
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: client
+        image: local/grpc-client:latest
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: TARGET_ADDR
+          value: "grpc-server.calc.svc.cluster.local:50051"
+        args: ["mul", "3", "5"]
+
