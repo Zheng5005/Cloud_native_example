@@ -48,6 +48,6 @@ k8s-destroy:
 
 .PHONY: all-local
 
-all-local: proto kind-up docker-build k8s-apply k8s-run-client
+all-local: proto kind-up docker-build k8s-apply
 	@echo "✅ Flujo completo ejecutado correctamente"
 
